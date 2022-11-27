@@ -10,6 +10,9 @@ contract Game is IRPS {
     mapping(address => mapping(address => Winner)) private winners;
     mapping(address => mapping(address => Move)) private moves;
 
+    function test() public view returns (string memory) {
+        return "test works";
+    }
     function gameStart(address _opponentAddress) external
         isGameStarted(_opponentAddress) correctAddress(_opponentAddress) {
         players[msg.sender][_opponentAddress] = Player.PlayerOne;
